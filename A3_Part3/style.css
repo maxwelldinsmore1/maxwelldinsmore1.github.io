@@ -10,6 +10,7 @@ body {
   max-width: 1400px;
 }
 
+
 /* Layout */
 
 section {
@@ -40,6 +41,35 @@ header, section, aside, nav, footer {
 header, footer {
   border-top: 5px solid #a66;
   border-bottom: 5px solid #a66;
+  background-color: rgb(171, 216, 201);
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+
+* {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: azure;
+  font-size: 1.5rem;
+}
+
+h1, h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.5rem;
+}
+nav ul {
+  padding-top: 50px;
+  line-height: 4;
+}
+a:link,
+a:visited {
+  color: #fb6542;
+}
+
+a:hover {
+  text-decoration: none;
+  color: green;
+}
