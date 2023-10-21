@@ -2,4 +2,27 @@ html {
   font-family: sans-serif;
 }
 
+
+
 /* Your CSS below here */
+div {
+  display: block;
+  width: 200px;
+  line-height: 200px;
+  height: 200px;
+  text-align: center;
+  background-color: #800000;
+  /*default font size is 16. so 18/16 = 1.125 rem*/
+  font-size: 1.125rem;
+  text-shadow: 1px 1px #558ABB;
+  border-radius: 10px;
+  border: 3px solid #400000;
+  box-shadow: 10px 10px 5px #100000;
+  background: linear-gradient(
+    120deg,
+    black 60%,
+
+
+
+  ) 
+}
