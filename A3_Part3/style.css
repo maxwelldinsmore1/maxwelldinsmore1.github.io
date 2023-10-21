@@ -74,9 +74,12 @@ h1, h2 {
 section {
   text-indent: 20px;
 }
-
+section ul {
+  list-style-type: square;
+}
 aside ul {
   line-height: 2;
+  list-style-type: square;
 }
 nav ul {
   line-height: 4;
@@ -102,3 +105,11 @@ a:hover {
   text-decoration: none;
   color: green;
 }
+
+a[href^="http"] {
+  background: url("external-link-52.png") no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
+/*I used the mdn docs external link png and it doesn't work, could not find a replacement 
+either hope its just on my end */
