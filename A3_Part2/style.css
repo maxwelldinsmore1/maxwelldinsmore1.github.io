@@ -17,7 +17,7 @@ div {
   line-height: 200px;
   height: 200px;
   text-align: center;
-  background: linear-gradient(125deg, transparent 10%, black, maroon);;
+  background: linear-gradient(125deg, #800000 80%, #000000FF);;
   /*default font size is 16. so 18/16 = 1.125 rem*/
   font-size: 1.125rem;
   text-shadow: 1px 1px #558ABB;
@@ -25,5 +25,3 @@ div {
   border: 3px solid #400000;
   box-shadow: 10px 10px 5px #100000; 
 }
-
-/* opacity for 20% is 33*/
