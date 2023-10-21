@@ -4,6 +4,11 @@ File: A3_Part4/styles.css
 Date: 2023-10-17
 Part 4 of A3.....
 */
+
+/* 
+Flexbox where column 1 is image and text
+column 2 is photos
+*/
 body {
   background-color: #fff;
   color: #333;
@@ -27,16 +32,34 @@ img {
   margin: 0 auto;
   padding: 0 20px;
   max-width: 980px;
+  display: flex;
+  flex-direction: row;
+  float: left
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+aside ul {
+  display: grid;
+  grid-template-columns: 200px 200px
 }
 
 nav {
   background-color: #000;
   padding: .5em;
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
   margin: 0;
   padding: 0;
+  list-style: none;
+  display: flex;
   list-style: none;
 }
 
@@ -50,6 +73,10 @@ nav a {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+article img {
+  float: left;
+  padding: 10px;
 }
 
 .feature {
