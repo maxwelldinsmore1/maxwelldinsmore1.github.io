@@ -16,3 +16,6 @@ newImage.setAttribute('alt', xxx);
 thumbBar.appendChild(newImage);
 
 /* Wiring up the Darken/Lighten button */
+
+
+// DARKEN https://www.geeksforgeeks.org/how-to-darken-an-image-using-css/
