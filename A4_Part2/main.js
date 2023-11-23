@@ -15,6 +15,11 @@ for (let images in imageArray) {
     newImage.setAttribute('src', "images/" + imageArray[images]);
     newImage.setAttribute('alt', imageAlt[images]);
     thumbBar.appendChild(newImage);
+    /* Adding click to display smaller images as main*/
+    newImage.addEventListener('click', () => {
+        displayedImage.setAttribute('src', "images/" + imageArray[images])
+        displayedImage.setAttribute('alt', imageAlt[images]);
+    })
 }
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', () => {
@@ -29,3 +34,4 @@ btn.addEventListener('click', () => {
         overlay.style.backgroundColor =  "rgba(0,0,0,0)";
     }
 });
+
