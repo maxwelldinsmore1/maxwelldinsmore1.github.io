@@ -5,15 +5,15 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
-const imageArray[0] = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg"]
+const imageArray = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg"]
 
 /* Declaring the alternative text for each image file */
-
+const imageAlt = ["Close up eyeball", "Close up mural", "Close up white and purple flowers", "Ancient egyptian paintings", "Butterfly on a leaf"]
 /* Looping through images */
-for (images in imageArray) {
+for (let images in imageArray) {
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', xxx);
-    newImage.setAttribute('alt', xxx);
+    newImage.setAttribute('src', "images/" + imageArray[images]);
+    newImage.setAttribute('alt', imageAlt[images]);
     thumbBar.appendChild(newImage);
 }
 /* Wiring up the Darken/Lighten button */
