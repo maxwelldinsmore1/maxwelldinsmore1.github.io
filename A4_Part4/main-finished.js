@@ -84,9 +84,63 @@ class Ball extends Shape{
 }
 
 class EvilCircle extends Shape {
-   constructor(x, y, velX, velY, color, size, exists) {
-      super(x,y,20,20,white,10);
+   constructor(x, y, velX, velY, color, size) {
+      super(x,y,velX,velY,color,size);
+      window.addEventListener("keydown", (e) => {
+         switch (e.key) {
+           case "a":
+             this.x -= this.velX;
+             break;
+           case "d":
+             this.x += this.velX;
+             break;
+           case "w":
+             this.y -= this.velY;
+             break;
+           case "s":
+             this.y += this.velY;
+             break;
+         }
+       });
    }
+   draw() {
+      ctx.lineWidth() =20;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+      ctx.stroke();
+   }
+
+   checkBounds() {
+      if ((this.x + this.size) >= width) {
+         this.x -= this.size
+      }
+
+      if ((this.x - this.size) <= 0) {
+         this.x += this.size
+      }
+
+      if ((this.y + this.size) >= height) {
+         this.y -= this.size
+      }
+
+      if ((this.y - this.size) <= 0) {
+         this.size += this.size
+      }
+   }
+
+   collisionDetect() {
+      for (const ball of balls) {
+         if (ball.exists === true) {
+            const dx = this.x - ball.x;
+            const dy = this.y - ball.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+         
+            if (distance < this.size + ball.size) {
+               ball.exists = false;
+            }
+         }
+      }
+    }
 }
 
 const balls = [];
@@ -106,15 +160,19 @@ while (balls.length < 25) {
 
   balls.push(ball);
 }
-
+const evil = new EvilCircle(
+   50,50,20,20,'rgba(255, 255, 255)',10
+)
 function loop() {
    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
    ctx.fillRect(0, 0,  width, height);
 
    for (const ball of balls) {
-     ball.draw();
-     ball.update();
-     ball.collisionDetect();
+      if (ball.exists === true) {
+         ball.draw();
+         ball.update();
+         ball.collisionDetect();
+      }
    }
 
    requestAnimationFrame(loop);
