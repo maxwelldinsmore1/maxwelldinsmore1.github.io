@@ -1,3 +1,10 @@
+/*
+      Name: Maxwell Dinsmore
+      File: A4_Part3/main.js
+      Date: 2023-11-23
+      Part 3 of A4.....
+*/
+
 // setup canvas
 
 const canvas = document.querySelector('canvas');

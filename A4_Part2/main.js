@@ -1,3 +1,10 @@
+/*
+      Name: Maxwell Dinsmore
+      File: A4_Part2/main.js
+      Date: 2023-11-23
+      Part 2 of A4.....
+*/
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
