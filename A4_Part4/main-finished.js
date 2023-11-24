@@ -12,6 +12,11 @@ const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
+//for score counter
+const scoreCount = document.querySelector('p');
+let countBalls = 0;
+scoreCount.innerHTML = 'score: &nbsp'
+
 // function to generate random number
 
 function random(min, max) {
@@ -105,9 +110,10 @@ class EvilCircle extends Shape {
    }
    draw() {
       ctx.beginPath();
-      ctx.fillStyle = this.color;
+      ctx.lineWidth = 3;
       ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-      ctx.fill();
+      ctx.strokeStyle = "white";
+      ctx.stroke();
    }
 
    checkBounds() {
@@ -137,6 +143,8 @@ class EvilCircle extends Shape {
          
             if (distance < this.size + ball.size) {
                ball.exists = false;
+               countBalls += 1;
+               scoreCount.innerHTML = 'score: ' +  countBalls
             }
          }
       }
@@ -144,6 +152,7 @@ class EvilCircle extends Shape {
 }
 
 const balls = [];
+
 
 while (balls.length < 25) {
    const size = random(10,20);
