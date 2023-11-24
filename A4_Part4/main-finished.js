@@ -104,10 +104,10 @@ class EvilCircle extends Shape {
        });
    }
    draw() {
-      ctx.lineWidth() =20;
       ctx.beginPath();
+      ctx.fillStyle = this.color;
       ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-      ctx.stroke();
+      ctx.fill();
    }
 
    checkBounds() {
@@ -174,8 +174,10 @@ function loop() {
          ball.collisionDetect();
       }
    }
-
+   evil.draw();
+   evil.checkBounds();
+   evil.collisionDetect();
    requestAnimationFrame(loop);
-}
+}//fix draw add counter through element p
 
 loop();
