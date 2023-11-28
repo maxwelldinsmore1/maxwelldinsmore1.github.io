@@ -1,3 +1,10 @@
+/*
+      Name: Maxwell Dinsmore
+      File: A5_Part1/main.js
+      Date: 2023-11-28
+      Part 1 of A5.....
+*/
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
