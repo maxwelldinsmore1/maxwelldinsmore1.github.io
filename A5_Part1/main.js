@@ -59,16 +59,17 @@ function submitComment() {
   const commentPara = document.createElement('p');
   const nameValue = nameField.value;
   const commentValue = commentField.value;
+  if (nameValue != "" && commentValue != "") {
+    namePara.textContent = nameValue;
+    commentPara.textContent = commentValue;
+    
+    list.appendChild(listItem);
+    listItem.appendChild(namePara);
+    listItem.appendChild(commentPara);
 
-  namePara.textContent = nameValue;
-  commentPara.textContent = commentValue;
-
-  list.appendChild(listItem);
-  listItem.appendChild(namePara);
-  listItem.appendChild(commentPara);
-
-  nameField.value = '';
-  commentField.value = '';
+    nameField.value = '';
+    commentField.value = '';
+  }
 };
 
 //add and remove tabindex = 0 when form is opened or closed
