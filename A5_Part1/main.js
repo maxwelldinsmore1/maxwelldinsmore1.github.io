@@ -10,6 +10,13 @@
 const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.querySelector('.comment-wrapper');
 
+// Moved query selectors so show hide comments could use them
+const form = document.querySelector('.comment-form');
+const nameField = document.querySelector('#name');
+const commentField = document.querySelector('#comment');
+const list = document.querySelector('.comment-container');
+
+
 commentWrapper.style.display = 'none';
 
 showHideBtn.onclick = function() {
@@ -37,10 +44,6 @@ showHideBtn.addEventListener("keydown", (Enter) => {
 
 // functionality for adding a new comment via the comments form
 
-const form = document.querySelector('.comment-form');
-const nameField = document.querySelector('#name');
-const commentField = document.querySelector('#comment');
-const list = document.querySelector('.comment-container');
 
 form.onsubmit = function(e) {
   e.preventDefault();
@@ -63,4 +66,7 @@ function submitComment() {
 
   nameField.value = '';
   commentField.value = '';
-}
+};
+
+//add and remove tabindex = 0 when form is opened or closed
+
